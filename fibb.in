@@ -1,0 +1,50 @@
+In 5 Zadejte dolni hranici:
+Register 99 1 Fal F on False True
+Register 98 0 Fal F on False True
+Register 1 0 Fal F off False False
+Register 2 0 Fal F off False False
+Register 3 0 Tr off off False False
+Register 4 0 Tr off off False False
+Register 5 0 In off on False True
+Register 6 0 No off on False True
+Register 7 0 Tr off on True False
+
+ICell 1 3
+99 99
+id
+
+ICell 2 4
+98 98
+id
+
+CCell 99
+1 99
+eq
+
+CCell 98
+2 98
+eq
+
+ICell 2 4 6
+1 2
+plus
+
+ICell 1 3 6
+3 4
+plus
+
+CCell 1 2 3 4
+1 2
+lt
+
+CCell 1 2 3 4
+3 4
+lt
+
+CCell 7
+6 5
+gt
+
+ICell 7
+6 6
+id

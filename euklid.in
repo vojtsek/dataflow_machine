@@ -1,0 +1,69 @@
+In 99 Zadej (prvni >= druhe):
+In 98 Zadej (prvni >= druhe):
+Register 99 0 In off off False True
+Register 98 0 In off off False True
+Register 1 0 Tr T off False False
+Register 2 0 Tr T off False False
+Register 3 0 Fal off off False False
+Register 4 0 Fal off off False False
+
+Register 5 1 No off on False True
+Register 6 1 Tr off on False False
+Register 7 0 Tr off off False False
+Register 8 0 No off off True False
+
+ICell 1 3
+99 99
+id
+
+ICell 2 4
+98 98
+id
+
+CCell 99
+1 99
+ne
+
+CCell 98
+2 98
+ne
+
+ICell 1 3 7
+1 2
+minus
+
+ICell 2 4 7
+4 3
+minus
+
+CCell 1 2 3 4 
+1 2
+gt
+
+CCell 1 2 3 4 
+3 4
+gt
+
+CCell 6
+1 5
+eq
+
+CCell 6
+3 5
+eq
+
+CCell 7
+1 2
+eq
+
+CCell 7
+3 4
+eq
+
+ICell 8
+6 6
+id
+
+ICell 8
+7 7
+id

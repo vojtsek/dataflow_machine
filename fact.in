@@ -1,0 +1,22 @@
+In 1 Zadejte cislo pro vypocet faktorialu:
+Register 1 0 In off on False True
+Register 2 1 No off on False True
+Register 3 0 No off on False True
+Register 4 1 No off on False True
+Register 5 0 Fal off on True False
+
+ICell 2
+1 2
+times
+
+ICell 1
+1 4
+minus
+
+CCell 5
+1 3
+gt
+
+ICell 5
+2 2
+id
