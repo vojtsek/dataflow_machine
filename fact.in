@@ -1,17 +1,37 @@
+#nacteni vstupu
+
 In 1 Zadejte cislo pro vypocet faktorialu:
+
+#registr 1 obsahuje na zacatku cislo pro vypocet faktorialu, postupne se snizuje
+
 Register 1 0 In off on False True
+
+#registr 2 postupne pocita vysledek
+
 Register 2 1 No off on False True
+
+#registry 3 a 4 maji pomocnou funkci: r3 pro porovnani a r4 pro dekrementaci o 1
+
 Register 3 0 No off on False True
 Register 4 1 No off on False True
+
+#registr 5 je vystupni
+
 Register 5 0 Fal off on True False
+
+#nasobeni obsahu r2 obsahem r1
 
 ICell 2
 1 2
 times
 
+#dekrementace r1 o jednicku
+
 ICell 1
 1 4
 minus
+
+#r5 prubezne ziskava vysledek a prejde do enabled kdyz je r1 == 0
 
 CCell 5
 1 3

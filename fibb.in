@@ -1,13 +1,33 @@
+#nacteni vstupu do r5
+
 In 5 Zadejte dolni hranici:
+
+#r99 a r98 obsahuji pocatecni dve cisla
+
 Register 99 1 Fal F on False True
 Register 98 0 Fal F on False True
+
+#registry 1, 2, 3, 4 obsahuji aktualni hodnoty cisel
+#stridave se povoluji a zakazuji, plati invarianty r1 == r3 a r2 == r4
+
 Register 1 0 Fal F off False False
 Register 2 0 Fal F off False False
 Register 3 0 Tr off off False False
 Register 4 0 Tr off off False False
+
+#r5 obsahuje spodni hranici, pokud je nove cislo vyssi nez hranice, vypocet se zastavi
+
 Register 5 0 In off on False True
+
+#r6 obsahuje aktualne vypocitane cislo
+
 Register 6 0 No off on False True
+
+#r7 je vystupni
+
 Register 7 0 Tr off on True False
+
+#preneseni pocatecnich hodnot
 
 ICell 1 3
 99 99
@@ -17,6 +37,8 @@ ICell 2 4
 98 98
 id
 
+#po preneseni se pocatecni registry prepnou do disabled
+
 CCell 99
 1 99
 eq
@@ -24,6 +46,10 @@ eq
 CCell 98
 2 98
 eq
+
+#soucet dvou cisel se stridave posila bud do "hornich" nebo "dolnich" registru
+#podle toho, ktere jsou enabled
+#zaroven se vzdy nova hodnota posle do r6
 
 ICell 2 4 6
 1 2
@@ -33,6 +59,8 @@ ICell 1 3 6
 3 4
 plus
 
+#stridave prepinani dvojic registru
+
 CCell 1 2 3 4
 1 2
 lt
@@ -40,6 +68,8 @@ lt
 CCell 1 2 3 4
 3 4
 lt
+
+#do r7 se kopiruje hodnota r6, r7 je povolen v okamziku, kdy hodnota prekroci zadane cislo
 
 CCell 7
 6 5
